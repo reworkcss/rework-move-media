@@ -4,7 +4,7 @@ Aggregate media queries and move it to the end of the file.
 
 ### API
 
-    var moveMedia = require('move-media')
+    var moveMedia = require('rework-move-media')
 
     var css = rework(inputCSS)
       .use(moveMedia(sortFunction))
