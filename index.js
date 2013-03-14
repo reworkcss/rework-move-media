@@ -1,8 +1,13 @@
 module.exports = function (sortFn) {
-  if (!sortFn) {
+  if (Array.isArray(sortFn)) {
+    var arr = sortFn
     sortFn = function (a, b) {
-      if (a < b) return 1;
-      if (b > a) return -1;
+      return arr.indexOf(b) - arr.indexOf(a)
+    }
+  } else if (!sortFn) {
+    sortFn = function (a, b) {
+      if (a < b) return -1;
+      if (a > b) return 1;
       return 0
     }
   }

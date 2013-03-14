@@ -13,10 +13,22 @@ Aggregate media queries and move it to the end of the file.
 By default, `sortFunction` just sorts the queries alphabetically:
 
     function sortFunction(a, b) {
-      if (a < b) return 1;
-      if (a > b) return -1;
+      if (a < b) return -1;
+      if (a > b) return 1;
       return 0
     }
+
+If `sortFunction` is an array of strings,
+it will sort the media queries in the order provided.
+Assumes all media queries are accounted for:
+
+    var css = rework(inputCSS)
+      .use(moveMedia([
+        '(min-width: 320px)',
+        '(min-width: 960px)',
+        '(min-width: 1080px)'
+      ]))
+      .toString()
 
 ### Limitations
 

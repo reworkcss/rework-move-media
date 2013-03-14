@@ -2,12 +2,6 @@ body {
   color: yellow
 }
 
-@media (max-width: 300px) {
-  body {
-    color: orange
-  }
-}
-
 @media (min-width: 100px) {
   body {
     color: black
@@ -23,5 +17,11 @@ body {
 
   body {
     color: purple
+  }
+}
+
+@media (max-width: 300px) {
+  body {
+    color: orange
   }
 }
