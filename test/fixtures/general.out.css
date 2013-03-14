@@ -1,0 +1,27 @@
+body {
+  color: yellow
+}
+
+@media (min-width: 100px) {
+  body {
+    color: black
+  }
+
+  body {
+    color: green
+  }
+
+  body {
+    color: red
+  }
+
+  body {
+    color: purple
+  }
+}
+
+@media (max-width: 300px) {
+  body {
+    color: orange
+  }
+}
