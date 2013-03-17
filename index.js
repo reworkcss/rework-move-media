@@ -2,7 +2,10 @@ module.exports = function (sortFn) {
   if (Array.isArray(sortFn)) {
     var arr = sortFn
     sortFn = function (a, b) {
-      return arr.indexOf(b) - arr.indexOf(a)
+      var ai = arr.indexOf(a)
+      var ab = arr.indexOf(b)
+      if (ai === -1 && ab === -1) return 0;
+      return ab - ai
     }
   } else if (!sortFn) {
     sortFn = function (a, b) {
