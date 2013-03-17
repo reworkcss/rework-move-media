@@ -17,5 +17,5 @@ test('general', 'General failed')
 
 test('ordered', 'Ordered failed', [
   '(min-width: 100px)',
-  '(max-width: 100px)'
+  '(max-width: 300px)'
 ])

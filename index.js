@@ -3,9 +3,9 @@ module.exports = function (sortFn) {
     var arr = sortFn
     sortFn = function (a, b) {
       var ai = arr.indexOf(a)
-      var ab = arr.indexOf(b)
-      if (ai === -1 && ab === -1) return 0;
-      return ab - ai
+      var bi = arr.indexOf(b)
+      if (ai === -1 && bi === -1) return 0;
+      return ai - bi
     }
   } else if (!sortFn) {
     sortFn = function (a, b) {
