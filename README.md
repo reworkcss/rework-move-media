@@ -20,7 +20,7 @@ This function is passed in an `Array.prototype.sort()` function.
 ```js
 var css = rework(inputCSS)
 .use(moveMedia(function (a, b) {
-return a - b
+  return a - b
 }))
 .toString()
 ```
