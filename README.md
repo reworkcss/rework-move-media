@@ -21,7 +21,9 @@ This function is passed in an `Array.prototype.sort()` function.
 ```js
 var css = rework(inputCSS)
 .use(moveMedia(function (a, b) {
-  return a - b
+  if (a > b) return 1;
+  if (a < b) return -1;
+  return 0;
 }))
 .toString()
 ```
