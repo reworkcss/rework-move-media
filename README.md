@@ -5,6 +5,7 @@ Aggregate media queries and move it to the end of the file.
 ### API
 
 ```js
+var rework = require('rework')
 var moveMedia = require('rework-move-media')
 
 var css = rework(inputCSS)
