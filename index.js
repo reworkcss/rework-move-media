@@ -1,18 +1,11 @@
-module.exports = function (sortFn) {
-  if (Array.isArray(sortFn)) {
-    var arr = sortFn
-    sortFn = function (a, b) {
-      var ai = arr.indexOf(a)
-      var bi = arr.indexOf(b)
-      if (ai === -1 && bi === -1) return 0;
-      return ai - bi
+module.exports = function (sort) {
+  if (Array.isArray(sort)) {
+    var arr = sort
+    sort = function (a, b) {
+      return arr.indexOf(a) - arr.indexOf(b)
     }
-  } else if (!sortFn) {
-    sortFn = function (a, b) {
-      if (a < b) return -1;
-      if (a > b) return 1;
-      return 0
-    }
+  } else if (sort && typeof sort !== 'function') {
+    throw TypeError('Sort argument must either be an array or a function.')
   }
 
   return function (style) {
@@ -28,7 +21,9 @@ module.exports = function (sortFn) {
       ;[].push.apply(media[query] || (media[query] = []), rule.rules)
     }
 
-    ;[].push.apply(rules, Object.keys(media).sort(sortFn).map(function (query) {
+    var queries = Object.keys(media)
+    if (sort) queries = queries.sort(sort);
+    ;[].push.apply(rules, queries.map(function (query) {
       return {
         media: query,
         rules: media[query]

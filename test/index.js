@@ -10,12 +10,13 @@ function read(file) {
 
 function test(file, msg, args) {
   var out = rework(read(file)).use(moveMedia(args)).toString()
-  assert.equal(out, read(file + '.out'), msg + ': ' + out)
+  assert.equal(out, read(file + '.out'), msg + ':\n' + out)
 }
 
 test('general', 'General failed')
 
 test('ordered', 'Ordered failed', [
   '(min-width: 100px)',
-  '(max-width: 300px)'
+  '(max-width: 300px)',
+  '(max-width: 300px) and (min-width: 299px)'
 ])

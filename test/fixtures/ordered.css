@@ -1,3 +1,9 @@
+@media (max-width: 300px) and (min-width: 299px) {
+  body {
+    color: pink;
+  }
+}
+
 @media (min-width: 100px) {
   body {
     color: black;
@@ -23,6 +29,12 @@ body {
 @media (max-width: 300px) {
   body {
     color: orange;
+  }
+}
+
+@media (max-width: 300px) and (min-width: 299px) {
+  body {
+    color: teal;
   }
 }
 

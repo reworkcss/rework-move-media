@@ -4,38 +4,46 @@ Aggregate media queries and move it to the end of the file.
 
 ### API
 
-    var moveMedia = require('rework-move-media')
+```js
+var moveMedia = require('rework-move-media')
 
-    var css = rework(inputCSS)
-      .use(moveMedia(sortFunction))
-      .toString()
+var css = rework(inputCSS)
+.use(moveMedia(sort))
+.toString()
+```
 
-By default, `sortFunction` just sorts the queries alphabetically:
+#### moveMedia([sort])
 
-    function sortFunction(a, b) {
-      if (a < b) return -1;
-      if (a > b) return 1;
-      return 0
-    }
+`sort` (function) - An optional function to sort the media queries.
+This function is passed in an `Array.prototype.sort()` function.
 
-If `sortFunction` is an array of strings,
-it will sort the media queries in the order provided.
-Assumes all media queries are accounted for:
+```js
+var css = rework(inputCSS)
+.use(moveMedia(function (a, b) {
+return a - b
+}))
+.toString()
+```
 
-    var css = rework(inputCSS)
-      .use(moveMedia([
-        '(min-width: 320px)',
-        '(min-width: 960px)',
-        '(min-width: 1080px)'
-      ]))
-      .toString()
+`sort` (array) - If `sort` is an array of strings,
+the media queries will be sorted in the order provided.
 
-### Limitations
+```js
+var css = rework(inputCSS)
+.use(moveMedia([
+  '(min-width: 320px)',
+  '(min-width: 960px)',
+  '(min-width: 1080px)'
+]))
+.toString()
+```
 
-- Assumes media query order does not matter.
-  If it does, then use your own sort function.
-- Declarations within each media query preserves order.
-- In general, keep the order in mind!
+If no `sort` option is specified,
+the queries will be sorted by the order in which they were defined.
+
+### Compatibility
+
+IE9+
 
 ### License
 

@@ -25,3 +25,13 @@ body {
     color: orange
   }
 }
+
+@media (max-width: 300px) and (min-width: 299px) {
+  body {
+    color: pink
+  }
+
+  body {
+    color: teal
+  }
+}
