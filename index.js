@@ -16,21 +16,23 @@ module.exports = function (sortFn) {
   }
 
   return function (style) {
-    var rules = []
+    var rules = style.rules
     var media = {}
 
-    style.rules.forEach(function (rule) {
+    for (var i = 0; i < rules.length; i++) {
+      var rule = rules[i]
       var query = rule.media
-      if (!query) return rules.push(rule);
+      if (!query) continue;
 
-      ;[].push.apply((media[query] || (media[query] = {
+      rules.splice(i--, 1)
+      ;[].push.apply(media[query] || (media[query] = []), rule.rules)
+    }
+
+    ;[].push.apply(rules, Object.keys(media).sort(sortFn).map(function (query) {
+      return {
         media: query,
-        rules: []
-      })).rules, rule.rules)
-    })
-
-    style.rules = rules.concat(Object.keys(media).sort(sortFn).map(function (query) {
-      return media[query]
+        rules: media[query]
+      }
     }))
   }
 }
