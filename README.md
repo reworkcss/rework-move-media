@@ -1,6 +1,4 @@
-## Move Media
-
-[![Build Status](https://travis-ci.org/jonathanong/rework-move-media.png)](https://travis-ci.org/jonathanong/rework-move-media)
+## Move Media [![Build Status](https://travis-ci.org/jonathanong/rework-move-media.png)](https://travis-ci.org/jonathanong/rework-move-media)
 
 Aggregate media queries and move it to the end of the file.
 
