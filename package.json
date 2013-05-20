@@ -1,7 +1,7 @@
 {
   "name": "rework-move-media",
   "description": "Move media to the end of the CSS file",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "peerDependencies": {
     "rework": "*"
   },
@@ -25,5 +25,5 @@
     "url": "https://github.com/jonathanong/rework-move-media/issues",
     "email": "me@jongleberry.com"
   },
-  "license": "WTFPL"
+  "license": "MIT"
 }
