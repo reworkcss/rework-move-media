@@ -1,37 +1,37 @@
 body {
-  color: yellow
+  color: yellow;
 }
 
 @media (min-width: 100px) {
   body {
-    color: black
+    color: black;
   }
 
   body {
-    color: green
+    color: green;
   }
 
   body {
-    color: red
+    color: red;
   }
 
   body {
-    color: purple
+    color: purple;
   }
 }
 
 @media (max-width: 300px) {
   body {
-    color: orange
+    color: orange;
   }
 }
 
 @media (max-width: 300px) and (min-width: 299px) {
   body {
-    color: pink
+    color: pink;
   }
 
   body {
-    color: teal
+    color: teal;
   }
 }

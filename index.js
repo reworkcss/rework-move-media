@@ -25,6 +25,7 @@ module.exports = function (sort) {
     if (sort) queries = queries.sort(sort);
     ;[].push.apply(rules, queries.map(function (query) {
       return {
+        type: 'media',
         media: query,
         rules: media[query]
       }

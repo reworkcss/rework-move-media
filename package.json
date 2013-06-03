@@ -1,12 +1,12 @@
 {
   "name": "rework-move-media",
   "description": "Move media to the end of the CSS file",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "peerDependencies": {
     "rework": "*"
   },
   "devDependencies": {
-    "rework": ">= 0.13.2"
+    "rework": "*"
   },
   "scripts": {
     "test": "node test"
