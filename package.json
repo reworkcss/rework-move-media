@@ -19,10 +19,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jonathanong/rework-move-media.git"
+    "url": "https://github.com/reworkcss/rework-move-media.git"
   },
   "bugs": {
-    "url": "https://github.com/jonathanong/rework-move-media/issues",
+    "url": "https://github.com/reworkcss/rework-move-media/issues",
     "email": "me@jongleberry.com"
   },
   "license": "MIT"
