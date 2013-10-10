@@ -2,7 +2,7 @@
   "name": "rework-move-media",
   "description": "Move media to the end of the CSS file",
   "repo": "reworkcss/rework-move-media",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "peerDependencies": {
     "visionmedia/rework": "*"
   },
